@@ -26,14 +26,19 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        startUISettings()
+        setStartingUISettings()
         setTextFields()
         setDelegates()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        subscribeToKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        unsubscribeToKeyboardNotifications()
     }
     
     func setDelegates() {
@@ -48,15 +53,14 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     // MARK: - Setting UI
     
-    func startUISettings() {
+    func setStartingUISettings() {
         shareButton.isEnabled = false
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         imageView.image = UIImage(named: "camera")
     }
     
     func setTextFields() {
-        topTextField.text = "top"
-        bottomTextField.text = "bottom"
+        setDefaultTexts()
         let attributes: [String: Any] = [
             NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
             NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
@@ -75,6 +79,11 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         bottomTextField.textAlignment = .center
     }
     
+    func setDefaultTexts() {
+        topTextField.text = "TOP"
+        bottomTextField.text = "BOTTOM"
+    }
+    
     // MARK: - Action Methods
     
     @IBAction func pickAnImage(_ sender: UIBarButtonItem) {
@@ -83,10 +92,8 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func cancel() {
-        imageView.image = UIImage(named: "camera")
-        topTextField.text = "top"
-        bottomTextField.text = "bottom"
-        shareButton.isEnabled = false
+        setStartingUISettings()
+        setDefaultTexts()
     }
     
     // MARK: - UIImagePickerController Delegate
@@ -118,11 +125,40 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField.text == "" {
-            topTextField.text = "top"
-            bottomTextField.text = "bottom"
+        if topTextField.text == "" {
+            topTextField.text = "TOP"
+        }
+        if bottomTextField.text == "" {
+            bottomTextField.text = "BOTTOM"
+        }
+    }
+
+    // MARK: - Keyboard Notifications
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        if bottomTextField.isFirstResponder {
+            view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
     
+    @objc func keyboardWillHide(_ notification: Notification) {
+        view.frame.origin.y = 0
+    }
+    
+    func subscribeToKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    func unsubscribeToKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    func getKeyboardHeight(_ notification: Notification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardHeight = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
+        return keyboardHeight.cgRectValue.height
+    }
 }
 
