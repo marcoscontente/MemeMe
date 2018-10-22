@@ -105,7 +105,24 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             bottomTextField.isEnabled = true
         }
     }
+   
+    // MARK: - UITextField Delegate
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.text = ""
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.text == "" {
+            topTextField.text = "top"
+            bottomTextField.text = "bottom"
+        }
+    }
     
 }
 
