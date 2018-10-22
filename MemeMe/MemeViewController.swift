@@ -17,10 +17,13 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var topToolBar: UIToolbar!
+    @IBOutlet weak var bottomToolBar: UIToolbar!
     
     // MARK: - Properties
     
     var pickerViewController = UIImagePickerController()
+    var memedImage: UIImage!
     
     // MARK: - Initialize methods
     
@@ -94,6 +97,36 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBAction func cancel() {
         setStartingUISettings()
         setDefaultTexts()
+    }
+    
+    func save() {
+        _ = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
+    }
+    
+    @IBAction func shareImage() {
+        memedImage = generateMemedImage()
+        let activityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        activityViewController.completionWithItemsHandler = {(activityType: UIActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
+            if !completed {
+                self.cancel()
+                return
+            }
+            self.save()
+        }
+        present(activityViewController, animated: true, completion: nil)
+    }
+    
+    func generateMemedImage() -> UIImage {
+        topToolBar.isHidden = true
+        bottomToolBar.isHidden = true
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.imageView.frame, afterScreenUpdates: true)
+        memedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        topToolBar.isHidden = false
+        bottomToolBar.isHidden = false
+        
+        return memedImage
     }
     
     // MARK: - UIImagePickerController Delegate
