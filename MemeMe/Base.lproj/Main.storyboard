@@ -74,10 +74,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="actionButton" destination="hbB-5F-flc" id="4cR-Zo-NeN"/>
                         <outlet property="bottomTextField" destination="tWB-V4-nji" id="7cQ-sh-Dri"/>
                         <outlet property="cameraButton" destination="NHh-np-MYg" id="vNW-wV-0oX"/>
                         <outlet property="imageView" destination="foJ-kN-Zev" id="6HK-kT-gaP"/>
+                        <outlet property="shareButton" destination="hbB-5F-flc" id="STt-93-ndX"/>
                         <outlet property="topTextField" destination="xNF-li-iy1" id="XwR-ZV-7zb"/>
                     </connections>
                 </viewController>
