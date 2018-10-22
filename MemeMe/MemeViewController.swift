@@ -42,10 +42,15 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         bottomTextField.delegate = self
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     // MARK: - Setting UI
     
     func startUISettings() {
         shareButton.isEnabled = false
+        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         imageView.image = UIImage(named: "camera")
     }
     
@@ -68,6 +73,37 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         bottomTextField.adjustsFontSizeToFitWidth = true
         topTextField.textAlignment = .center
         bottomTextField.textAlignment = .center
+    }
+    
+    // MARK: - Action Methods
+    
+    @IBAction func pickAnImage(_ sender: UIBarButtonItem) {
+        sender.title == "album" ? (pickerViewController.sourceType = .photoLibrary) : (pickerViewController.sourceType = .camera)
+        present(pickerViewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func cancel() {
+        imageView.image = UIImage(named: "camera")
+        topTextField.text = "top"
+        bottomTextField.text = "bottom"
+        shareButton.isEnabled = false
+    }
+    
+    // MARK: - UIImagePickerController Delegate
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageView.image = image
+            imageView.contentMode = .scaleAspectFit
+            dismiss(animated: true, completion: nil)
+            shareButton.isEnabled = true
+            topTextField.isEnabled = true
+            bottomTextField.isEnabled = true
+        }
     }
     
     
