@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,12 +14,72 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MemeViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleAspectFit" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="alq-fa-kfC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="action" id="hbB-5F-flc"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Hqw-qC-LVJ"/>
+                                    <barButtonItem systemItem="cancel" id="Iio-HZ-j8S"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPx-n2-ffd">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="eyg-fH-OPO"/>
+                                    <barButtonItem systemItem="camera" id="NHh-np-MYg"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="fyf-Wi-jY6"/>
+                                    <barButtonItem title="album" id="x1S-qh-wM3"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="vxv-IW-txD"/>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="foJ-kN-Zev">
+                                <rect key="frame" x="0.0" y="44" width="320" height="480"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xNF-li-iy1">
+                                <rect key="frame" x="22" y="66" width="276" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tWB-V4-nji">
+                                <rect key="frame" x="22" y="472" width="276" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="EPx-n2-ffd" firstAttribute="top" secondItem="tWB-V4-nji" secondAttribute="bottom" constant="22" id="0YF-nq-4vl"/>
+                            <constraint firstItem="EPx-n2-ffd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1QU-jp-LsK"/>
+                            <constraint firstItem="alq-fa-kfC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3xc-sY-Afb"/>
+                            <constraint firstItem="tWB-V4-nji" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="7HC-kI-dv0"/>
+                            <constraint firstItem="EPx-n2-ffd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Dz1-gP-TCo"/>
+                            <constraint firstItem="foJ-kN-Zev" firstAttribute="top" secondItem="alq-fa-kfC" secondAttribute="bottom" id="Eq4-7l-XGT"/>
+                            <constraint firstItem="xNF-li-iy1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="L6Y-B6-1ho"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xNF-li-iy1" secondAttribute="trailing" constant="22" id="NSo-jW-zMJ"/>
+                            <constraint firstItem="alq-fa-kfC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ZfX-Qq-LE2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="foJ-kN-Zev" secondAttribute="trailing" id="eya-Ud-B2y"/>
+                            <constraint firstItem="foJ-kN-Zev" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fhX-36-vga"/>
+                            <constraint firstItem="EPx-n2-ffd" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jhw-sB-zIh"/>
+                            <constraint firstItem="EPx-n2-ffd" firstAttribute="top" secondItem="foJ-kN-Zev" secondAttribute="bottom" id="tJV-fb-coY"/>
+                            <constraint firstItem="alq-fa-kfC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="y0B-lC-VEs"/>
+                            <constraint firstItem="xNF-li-iy1" firstAttribute="top" secondItem="alq-fa-kfC" secondAttribute="bottom" constant="22" id="yzr-5L-lYn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tWB-V4-nji" secondAttribute="trailing" constant="22" id="zXe-Iw-7a2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="actionButton" destination="hbB-5F-flc" id="4cR-Zo-NeN"/>
+                        <outlet property="bottomTextField" destination="tWB-V4-nji" id="7cQ-sh-Dri"/>
+                        <outlet property="cameraButton" destination="NHh-np-MYg" id="vNW-wV-0oX"/>
+                        <outlet property="imageView" destination="foJ-kN-Zev" id="6HK-kT-gaP"/>
+                        <outlet property="topTextField" destination="xNF-li-iy1" id="XwR-ZV-7zb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

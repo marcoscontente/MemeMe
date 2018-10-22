@@ -10,11 +10,17 @@ import UIKit
 
 class MemeViewController: UIViewController {
 
+    @IBOutlet weak var actionButton: UIBarButtonItem!
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var topTextField: UITextField!
+    @IBOutlet weak var bottomTextField: UITextField!
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-
+    
     
 }
 
