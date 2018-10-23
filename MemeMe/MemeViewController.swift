@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class MemeViewController: UIViewController, UITextFieldDelegate {
 
     //MARK: - Outlets
     
@@ -63,7 +63,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     func setTextFields() {
-        setDefaultTexts()
+        configureDefaultTexts()
         let attributes: [String: Any] = [
             NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
             NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
@@ -82,9 +82,14 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         bottomTextField.textAlignment = .center
     }
     
-    func setDefaultTexts() {
+    func configureDefaultTexts() {
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
+    }
+    
+    func hideTopAndBottomBars(_ hide: Bool) {
+        topToolBar.isHidden = hide
+        bottomToolBar.isHidden = hide
     }
     
     // MARK: - Action Methods
@@ -96,7 +101,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBAction func cancel() {
         setStartingUISettings()
-        setDefaultTexts()
+        configureDefaultTexts()
     }
     
     func save() {
@@ -117,33 +122,14 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     func generateMemedImage() -> UIImage {
-        topToolBar.isHidden = true
-        bottomToolBar.isHidden = true
+        hideTopAndBottomBars(true)
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.imageView.frame, afterScreenUpdates: true)
         memedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        topToolBar.isHidden = false
-        bottomToolBar.isHidden = false
+        hideTopAndBottomBars(false)
         
         return memedImage
-    }
-    
-    // MARK: - UIImagePickerController Delegate
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imageView.image = image
-            imageView.contentMode = .scaleAspectFit
-            dismiss(animated: true, completion: nil)
-            shareButton.isEnabled = true
-            topTextField.isEnabled = true
-            bottomTextField.isEnabled = true
-        }
     }
    
     // MARK: - UITextField Delegate
@@ -184,8 +170,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     func unsubscribeToKeyboardNotifications() {
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self)
     }
     
     func getKeyboardHeight(_ notification: Notification) -> CGFloat {
