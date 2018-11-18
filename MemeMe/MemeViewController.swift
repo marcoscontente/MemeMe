@@ -24,14 +24,20 @@ class MemeViewController: UIViewController, UITextFieldDelegate {
     
     var pickerViewController = UIImagePickerController()
     var memedImage: UIImage!
+    let memeTextAttributes: [String: Any] = [
+        NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
+        NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
+        NSAttributedStringKey.strokeWidth.rawValue: -3.0,
+        NSAttributedStringKey.font.rawValue: UIFont(name: "Impact", size: 40)!
+    ]
     
     // MARK: - Initialize methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        pickerViewController.delegate = self
         setStartingUISettings()
         setTextFields()
-        setDelegates()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,12 +48,6 @@ class MemeViewController: UIViewController, UITextFieldDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         unsubscribeToKeyboardNotifications()
-    }
-    
-    func setDelegates() {
-        pickerViewController.delegate = self
-        topTextField.delegate = self
-        bottomTextField.delegate = self
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -63,33 +63,26 @@ class MemeViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setTextFields() {
-        configureDefaultTexts()
-        let attributes: [String: Any] = [
-            NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
-            NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
-            NSAttributedStringKey.strokeWidth.rawValue: -3.0,
-            NSAttributedStringKey.font.rawValue: UIFont(name: "Impact", size: 40)!
-        ]
-        topTextField.defaultTextAttributes = attributes
-        bottomTextField.defaultTextAttributes = attributes
-        topTextField.autocapitalizationType = .allCharacters
-        bottomTextField.autocapitalizationType = .allCharacters
-        topTextField.borderStyle = .none
-        bottomTextField.borderStyle = .none
-        topTextField.adjustsFontSizeToFitWidth = true
-        bottomTextField.adjustsFontSizeToFitWidth = true
-        topTextField.textAlignment = .center
-        bottomTextField.textAlignment = .center
+        setStyle(toTextField: topTextField)
+        setStyle(toTextField: bottomTextField)
     }
     
-    func configureDefaultTexts() {
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
+    func setStyle(toTextField textField: UITextField) {
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.autocapitalizationType = .allCharacters
+        textField.borderStyle = .none
+        textField.adjustsFontSizeToFitWidth = true
+        textField.textAlignment = .center
+        textField.delegate = self
     }
     
     func hideTopAndBottomBars(_ hide: Bool) {
         topToolBar.isHidden = hide
         bottomToolBar.isHidden = hide
+    }
+    
+    func clear(text textField:UITextField) {
+        textField.text = ""
     }
     
     // MARK: - Action Methods
@@ -101,7 +94,8 @@ class MemeViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func cancel() {
         setStartingUISettings()
-        configureDefaultTexts()
+        clear(text: topTextField)
+        clear(text: bottomTextField)
     }
     
     func save() {
@@ -141,15 +135,6 @@ class MemeViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if topTextField.text == "" {
-            topTextField.text = "TOP"
-        }
-        if bottomTextField.text == "" {
-            bottomTextField.text = "BOTTOM"
-        }
     }
 
     // MARK: - Keyboard Notifications
