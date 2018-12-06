@@ -45,27 +45,33 @@
             </objects>
             <point key="canvasLocation" x="-855" y="-432"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Collection-->
         <scene sceneID="U3g-Wg-9SS">
             <objects>
-                <collectionViewController id="VUH-Pi-d9b" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="SentMemesCollectionViewController" title="Collection" id="VUH-Pi-d9b" customClass="SentMemesCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="YhP-m4-ndU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bnc-vp-yVg">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="67" height="75"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SentMemesCollectionViewCell" id="xZ6-oJ-BVM">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="67" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="67" height="75"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j7u-ES-ePd">
+                                            <rect key="frame" x="4" y="4" width="56" height="63"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
                                 </view>
                             </collectionViewCell>
                         </cells>
@@ -78,7 +84,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fNq-nc-wKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="158" y="-432"/>
+            <point key="canvasLocation" x="157.5" y="-432.04225352112678"/>
         </scene>
         <!--Meme View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -179,27 +185,32 @@
             </objects>
             <point key="canvasLocation" x="1176" y="-432"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Table-->
         <scene sceneID="gkL-Bg-vEg">
             <objects>
-                <tableViewController storyboardIdentifier="SentMemesTableViewController" id="cYx-s0-SrM" customClass="SentMemesTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SentMemesTableViewController" title="Table" id="cYx-s0-SrM" customClass="SentMemesTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lTc-sK-okm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SentMemesTableViewCell" rowHeight="158" id="izD-0l-bBe">
-                                <rect key="frame" x="0.0" y="28" width="320" height="158"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SentMemesTableViewCell" rowHeight="239" id="izD-0l-bBe">
+                                <rect key="frame" x="0.0" y="28" width="320" height="239"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="izD-0l-bBe" id="kTN-43-QXF">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="157.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="238.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yTM-yQ-Sib">
-                                            <rect key="frame" x="79" y="8" width="162" height="97"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yTM-yQ-Sib">
+                                            <rect key="frame" x="60" y="8" width="200" height="222.5"/>
                                         </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="yTM-yQ-Sib" firstAttribute="leading" secondItem="kTN-43-QXF" secondAttribute="leading" constant="60" id="EbX-Vq-5lL"/>
+                                        <constraint firstItem="yTM-yQ-Sib" firstAttribute="top" secondItem="kTN-43-QXF" secondAttribute="top" constant="8" id="Mga-Ko-c4d"/>
+                                        <constraint firstAttribute="bottom" secondItem="yTM-yQ-Sib" secondAttribute="bottom" constant="8" id="UxP-fd-XGO"/>
+                                        <constraint firstItem="yTM-yQ-Sib" firstAttribute="centerX" secondItem="kTN-43-QXF" secondAttribute="centerX" id="u0f-bq-sYg"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
