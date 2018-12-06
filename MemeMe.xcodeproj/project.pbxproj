@@ -60,15 +60,13 @@
 		899B8282217E7471009D810A /* MemeMe */ = {
 			isa = PBXGroup;
 			children = (
-				899B8297217E75E4009D810A /* fonts */,
 				899B8283217E7471009D810A /* AppDelegate.swift */,
-				899B8285217E7471009D810A /* MemeViewController.swift */,
-				899B829A217EC140009D810A /* MemeViewController+UIImagePickerControllerDelegate.swift */,
-				899B8287217E7471009D810A /* Main.storyboard */,
-				899B828A217E7472009D810A /* Assets.xcassets */,
-				899B828C217E7472009D810A /* LaunchScreen.storyboard */,
-				899B828F217E7472009D810A /* Info.plist */,
-				899B8295217E7550009D810A /* Meme.swift */,
+				8D447EA121B9636400F22DF6 /* Supporting Files */,
+				8D447EA021B9635600F22DF6 /* Model */,
+				8D447E9F21B9634E00F22DF6 /* Controller */,
+				8D447E9E21B9634500F22DF6 /* View */,
+				8D447EA221B963A500F22DF6 /* Extensions */,
+				8D447EA321B963AF00F22DF6 /* Storyboard */,
 			);
 			path = MemeMe;
 			sourceTree = "<group>";
@@ -79,6 +77,56 @@
 				899B8298217E75EF009D810A /* Impact.ttf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		8D447E9E21B9634500F22DF6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8D447E9F21B9634E00F22DF6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				899B8285217E7471009D810A /* MemeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8D447EA021B9635600F22DF6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				899B8295217E7550009D810A /* Meme.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8D447EA121B9636400F22DF6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				899B828C217E7472009D810A /* LaunchScreen.storyboard */,
+				899B8297217E75E4009D810A /* fonts */,
+				899B828A217E7472009D810A /* Assets.xcassets */,
+				899B828F217E7472009D810A /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8D447EA221B963A500F22DF6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				899B829A217EC140009D810A /* MemeViewController+UIImagePickerControllerDelegate.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8D447EA321B963AF00F22DF6 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				899B8287217E7471009D810A /* Main.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
