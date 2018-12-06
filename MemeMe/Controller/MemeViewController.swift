@@ -99,7 +99,13 @@ class MemeViewController: UIViewController, UITextFieldDelegate {
     }
     
     func save() {
-        _ = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
+        let meme = Meme(topText: topTextField.text!,
+                        bottomText: bottomTextField.text!,
+                        originalImage: imageView.image!,
+                        memedImage: memedImage)
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     @IBAction func shareImage() {
