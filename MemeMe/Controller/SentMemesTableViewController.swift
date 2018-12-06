@@ -34,5 +34,10 @@ class SentMemesTableViewController: UITableViewController {
         self.navigationController?.pushViewController(detailController, animated: true)
     }
     
-    
+    @IBAction func createNewMeme(_ sender: Any) {
+        let memeEditorController = storyboard?.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController
+        if let navigationController = navigationController {
+            navigationController.pushViewController(memeEditorController, animated: true)
+        }
+    }
 }

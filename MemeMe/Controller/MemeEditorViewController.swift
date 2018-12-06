@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemeViewController: UIViewController, UITextFieldDelegate {
+class MemeEditorViewController: UIViewController, UITextFieldDelegate {
 
     //MARK: - Outlets
     
