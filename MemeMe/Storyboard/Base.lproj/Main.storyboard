@@ -182,18 +182,24 @@
         <!--Root View Controller-->
         <scene sceneID="gkL-Bg-vEg">
             <objects>
-                <tableViewController id="cYx-s0-SrM" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SentMemesTableViewController" id="cYx-s0-SrM" customClass="SentMemesTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lTc-sK-okm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SentMemesTableViewCell" id="izD-0l-bBe">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SentMemesTableViewCell" rowHeight="158" id="izD-0l-bBe">
+                                <rect key="frame" x="0.0" y="28" width="320" height="158"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="izD-0l-bBe" id="kTN-43-QXF">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="157.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yTM-yQ-Sib">
+                                            <rect key="frame" x="79" y="8" width="162" height="97"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -206,7 +212,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zyc-5b-AW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="158" y="431"/>
+            <point key="canvasLocation" x="157.5" y="430.98591549295776"/>
         </scene>
         <!--Meme Detail View Controller-->
         <scene sceneID="bhU-it-9u8">
@@ -229,6 +235,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8J5-od-Qjt"/>
                     </view>
+                    <connections>
+                        <outlet property="memedImageDetailView" destination="YBj-iy-zqc" id="xoa-pY-33p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L45-TS-zNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

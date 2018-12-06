@@ -16,6 +16,7 @@
 		899B8299217E75EF009D810A /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 899B8298217E75EF009D810A /* Impact.ttf */; };
 		899B829B217EC140009D810A /* MemeViewController+UIImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899B829A217EC140009D810A /* MemeViewController+UIImagePickerControllerDelegate.swift */; };
 		8D447EA521B9644500F22DF6 /* MemeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D447EA421B9644500F22DF6 /* MemeDetailViewController.swift */; };
+		8D447EA721B9652700F22DF6 /* SentMemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D447EA621B9652700F22DF6 /* SentMemesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		899B8298217E75EF009D810A /* Impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Impact.ttf; sourceTree = "<group>"; };
 		899B829A217EC140009D810A /* MemeViewController+UIImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemeViewController+UIImagePickerControllerDelegate.swift"; sourceTree = "<group>"; };
 		8D447EA421B9644500F22DF6 /* MemeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeDetailViewController.swift; sourceTree = "<group>"; };
+		8D447EA621B9652700F22DF6 /* SentMemesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				899B8285217E7471009D810A /* MemeViewController.swift */,
 				8D447EA421B9644500F22DF6 /* MemeDetailViewController.swift */,
+				8D447EA621B9652700F22DF6 /* SentMemesTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				899B8296217E7550009D810A /* Meme.swift in Sources */,
+				8D447EA721B9652700F22DF6 /* SentMemesTableViewController.swift in Sources */,
 				899B8286217E7471009D810A /* MemeViewController.swift in Sources */,
 				899B8284217E7471009D810A /* AppDelegate.swift in Sources */,
 				899B829B217EC140009D810A /* MemeViewController+UIImagePickerControllerDelegate.swift in Sources */,
