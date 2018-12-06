@@ -43,11 +43,13 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
+        controllersBarsShouldAppears(true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         unsubscribeToKeyboardNotifications()
+        controllersBarsShouldAppears(false)
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -83,6 +85,11 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
     
     func clear(text textField:UITextField) {
         textField.text = ""
+    }
+    
+    func controllersBarsShouldAppears(_ appears: Bool) {
+        navigationController?.navigationBar.isHidden = appears
+        tabBarController?.tabBar.isHidden = appears
     }
     
     // MARK: - Action Methods

@@ -83,7 +83,9 @@
                             <outlet property="delegate" destination="VUH-Pi-d9b" id="QXR-Fo-60x"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="IMO-lR-iO6"/>
+                    <navigationItem key="navigationItem" id="IMO-lR-iO6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="FEZ-pH-YQ5"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fNq-nc-wKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
