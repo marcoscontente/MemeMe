@@ -19,6 +19,7 @@
 		8D447EA721B9652700F22DF6 /* SentMemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D447EA621B9652700F22DF6 /* SentMemesTableViewController.swift */; };
 		8D447EA921B97B7C00F22DF6 /* SentMemesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D447EA821B97B7C00F22DF6 /* SentMemesCollectionViewController.swift */; };
 		8D447EAB21B97C9700F22DF6 /* MemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D447EAA21B97C9700F22DF6 /* MemeCollectionViewCell.swift */; };
+		8D447EAD21B9809E00F22DF6 /* MemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D447EAC21B9809E00F22DF6 /* MemeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		8D447EA621B9652700F22DF6 /* SentMemesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesTableViewController.swift; sourceTree = "<group>"; };
 		8D447EA821B97B7C00F22DF6 /* SentMemesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesCollectionViewController.swift; sourceTree = "<group>"; };
 		8D447EAA21B97C9700F22DF6 /* MemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewCell.swift; sourceTree = "<group>"; };
+		8D447EAC21B9809E00F22DF6 /* MemeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				8D447EAA21B97C9700F22DF6 /* MemeCollectionViewCell.swift */,
+				8D447EAC21B9809E00F22DF6 /* MemeTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				8D447EA721B9652700F22DF6 /* SentMemesTableViewController.swift in Sources */,
 				899B8286217E7471009D810A /* MemeViewController.swift in Sources */,
 				899B8284217E7471009D810A /* AppDelegate.swift in Sources */,
+				8D447EAD21B9809E00F22DF6 /* MemeTableViewCell.swift in Sources */,
 				899B829B217EC140009D810A /* MemeViewController+UIImagePickerControllerDelegate.swift in Sources */,
 				8D447EA521B9644500F22DF6 /* MemeDetailViewController.swift in Sources */,
 			);
