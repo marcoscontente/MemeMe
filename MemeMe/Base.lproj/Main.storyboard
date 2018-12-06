@@ -208,6 +208,32 @@
             </objects>
             <point key="canvasLocation" x="158" y="431"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="bhU-it-9u8">
+            <objects>
+                <viewController id="jOx-cl-9CJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Rv-yN-wff">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YBj-iy-zqc">
+                                <rect key="frame" x="20" y="120" width="280" height="308"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8J5-od-Qjt" firstAttribute="bottom" secondItem="YBj-iy-zqc" secondAttribute="bottom" constant="140" id="5Sp-s0-jzI"/>
+                            <constraint firstItem="8J5-od-Qjt" firstAttribute="trailing" secondItem="YBj-iy-zqc" secondAttribute="trailing" constant="20" id="789-wk-W9z"/>
+                            <constraint firstItem="YBj-iy-zqc" firstAttribute="leading" secondItem="8J5-od-Qjt" secondAttribute="leading" constant="20" id="gNB-iP-x2t"/>
+                            <constraint firstItem="YBj-iy-zqc" firstAttribute="top" secondItem="8J5-od-Qjt" secondAttribute="top" constant="100" id="i91-du-gbB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8J5-od-Qjt"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L45-TS-zNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1176" y="431"/>
+        </scene>
         <!--Item-->
         <scene sceneID="IGR-K7-24d">
             <objects>
