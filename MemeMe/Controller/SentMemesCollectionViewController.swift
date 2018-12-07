@@ -11,12 +11,18 @@ import UIKit
 
 class SentMemesCollectionViewController: UICollectionViewController {
     
+    // MARK: - Properties
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    // MARK: - Initialize methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    // MARK: - CollectionViewDataSource Methods
+
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return appDelegate.memes.count
     }
@@ -33,6 +39,8 @@ class SentMemesCollectionViewController: UICollectionViewController {
         self.navigationController?.pushViewController(detailController, animated: true)
     }
     
+    // MARK: - Action methods
+
     @IBAction func createNewMeme(_ sender: Any) {
         let memeEditorController = storyboard?.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController
         if let navigationController = navigationController {

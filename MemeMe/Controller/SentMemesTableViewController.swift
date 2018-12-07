@@ -10,13 +10,19 @@ import Foundation
 import UIKit
 
 class SentMemesTableViewController: UITableViewController {
-        
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    // MARK: - Properties
+
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
+    // MARK: - Initialize methods
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    // MARK: - TableViewDataSource Methods
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return appDelegate.memes.count
     }
@@ -32,6 +38,8 @@ class SentMemesTableViewController: UITableViewController {
         detailController.memes = appDelegate.memes[indexPath.row]
         self.navigationController?.pushViewController(detailController, animated: true)
     }
+    
+    // MARK: - Action methods
     
     @IBAction func createNewMeme(_ sender: Any) {
         let memeEditorController = storyboard?.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController

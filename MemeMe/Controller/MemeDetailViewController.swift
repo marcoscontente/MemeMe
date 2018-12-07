@@ -11,10 +11,16 @@ import UIKit
 
 class MemeDetailViewController: UIViewController {
     
+    // MARK: - Outlets
+
     @IBOutlet weak var memedImageDetailView: UIImageView!
     
+    // MARK: - Properties
+
     var memes: Meme!
     
+    // MARK: - Initialize methods
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -29,6 +35,8 @@ class MemeDetailViewController: UIViewController {
         super.viewWillDisappear(animated)
         tabBarShouldHidden(false)
     }
+    
+    // MARK: - Layout Settings Methods
     
     func tabBarShouldHidden(_ should: Bool) {
         tabBarController?.tabBar.isHidden = should
