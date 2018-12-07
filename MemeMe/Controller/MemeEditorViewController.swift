@@ -19,6 +19,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var topToolBar: UIToolbar!
     @IBOutlet weak var bottomToolBar: UIToolbar!
+    @IBOutlet weak var imageContainerView: UIView!
     
     // MARK: - Properties
     
@@ -132,8 +133,8 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
     
     func generateMemedImage() -> UIImage {
         hideTopAndBottomBars(true)
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        view.drawHierarchy(in: self.imageView.frame, afterScreenUpdates: true)
+        UIGraphicsBeginImageContext(self.imageContainerView.frame.size)
+        imageContainerView.drawHierarchy(in: self.imageView.frame, afterScreenUpdates: true)
         memedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         hideTopAndBottomBars(false)
