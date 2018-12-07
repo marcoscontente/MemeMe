@@ -11,6 +11,10 @@ import UIKit
 
 class SentMemesCollectionViewController: UICollectionViewController {
     
+    // MARK: - Outlets
+
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
     // MARK: - Properties
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -19,6 +23,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setCollectionCellsLayout(withSpace: 3.0)
     }
     
     // MARK: - CollectionViewDataSource Methods
@@ -48,4 +53,17 @@ class SentMemesCollectionViewController: UICollectionViewController {
         }
     }
     
+    // MARK: - Layout Settings Methods
+    
+    func setCollectionCellsLayout(withSpace space: CGFloat) {
+        var dimension = (view.frame.size.width - (2 * space)) / 3
+        if (UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
+            dimension = (view.frame.size.width - (2 * space)) / 3
+        } else {
+            dimension = (view.frame.size.width - (2 * space)) / 5
+        }
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+    }
 }
