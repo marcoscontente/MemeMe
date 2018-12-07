@@ -22,6 +22,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Properties
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var pickerViewController = UIImagePickerController()
     var memedImage: UIImage!
     let memeTextAttributes: [String: Any] = [
@@ -110,9 +111,10 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
                         bottomText: bottomTextField.text!,
                         originalImage: imageView.image!,
                         memedImage: memedImage)
-        let object = UIApplication.shared.delegate
-        let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
+        
+        let rootViewController = storyboard?.instantiateViewController(withIdentifier: "RootViewController") as! UITabBarController
+        present(rootViewController, animated: true, completion: nil)
     }
     
     @IBAction func shareImage() {
