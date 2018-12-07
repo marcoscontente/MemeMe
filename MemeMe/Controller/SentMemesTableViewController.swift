@@ -23,14 +23,13 @@ class SentMemesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemeTableViewCell") as! MemeTableViewCell
-        let meme = appDelegate.memes[(indexPath as NSIndexPath).row]
-        cell.memeImageView.image = meme.memedImage
+        cell.memeImageView.image = appDelegate.memes[indexPath.row].memedImage
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailController = storyboard?.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
-        detailController.memes = appDelegate.memes[(indexPath as NSIndexPath).row]
+        detailController.memes = appDelegate.memes[indexPath.row]
         self.navigationController?.pushViewController(detailController, animated: true)
     }
     
