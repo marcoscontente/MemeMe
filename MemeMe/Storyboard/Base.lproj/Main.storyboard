@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Sent Memes-->
         <scene sceneID="FfM-QU-y9n">
             <objects>
-                <tabBarController storyboardIdentifier="RootViewController" id="i9W-i5-knM" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="RootViewController" title="Sent Memes" id="i9W-i5-knM" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Puj-mT-wkJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -83,7 +83,7 @@
                             <outlet property="delegate" destination="VUH-Pi-d9b" id="QXR-Fo-60x"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="IMO-lR-iO6">
+                    <navigationItem key="navigationItem" title="Sent Memes" id="IMO-lR-iO6">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="FEZ-pH-YQ5">
                             <connections>
                                 <action selector="createNewMeme:" destination="VUH-Pi-d9b" id="Wuv-Ed-gnT"/>
@@ -255,7 +255,7 @@
                             <outlet property="delegate" destination="cYx-s0-SrM" id="RGG-Y8-o6H"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="YAp-L1-8uL">
+                    <navigationItem key="navigationItem" title="Sent Memes" id="YAp-L1-8uL">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="scT-df-9mB">
                             <connections>
                                 <action selector="createNewMeme:" destination="cYx-s0-SrM" id="WQh-4d-mKq"/>
