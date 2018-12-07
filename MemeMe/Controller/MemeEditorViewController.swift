@@ -101,7 +101,14 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
         present(pickerViewController, animated: true, completion: nil)
     }
     
-    @IBAction func cancel() {
+    @IBAction func cancelButtonTapped() {
+        self.cancel()
+        if let navigationController = navigationController {
+            navigationController.popToRootViewController(animated: true)
+        }
+    }
+    
+    func cancel() {
         setStartingUISettings()
         clear(text: topTextField)
         clear(text: bottomTextField)
