@@ -221,7 +221,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="129.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yTM-yQ-Sib">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yTM-yQ-Sib">
                                             <rect key="frame" x="60" y="8" width="200" height="113.5"/>
                                         </imageView>
                                     </subviews>
@@ -263,15 +263,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YBj-iy-zqc">
-                                <rect key="frame" x="20" y="120" width="280" height="308"/>
+                                <rect key="frame" x="0.0" y="80" width="320" height="408"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8J5-od-Qjt" firstAttribute="bottom" secondItem="YBj-iy-zqc" secondAttribute="bottom" constant="140" id="5Sp-s0-jzI"/>
-                            <constraint firstItem="8J5-od-Qjt" firstAttribute="trailing" secondItem="YBj-iy-zqc" secondAttribute="trailing" constant="20" id="789-wk-W9z"/>
-                            <constraint firstItem="YBj-iy-zqc" firstAttribute="leading" secondItem="8J5-od-Qjt" secondAttribute="leading" constant="20" id="gNB-iP-x2t"/>
-                            <constraint firstItem="YBj-iy-zqc" firstAttribute="top" secondItem="8J5-od-Qjt" secondAttribute="top" constant="100" id="i91-du-gbB"/>
+                            <constraint firstItem="YBj-iy-zqc" firstAttribute="centerY" secondItem="9Rv-yN-wff" secondAttribute="centerY" id="YGs-IY-8du"/>
+                            <constraint firstItem="YBj-iy-zqc" firstAttribute="centerX" secondItem="9Rv-yN-wff" secondAttribute="centerX" id="ero-8R-1dD"/>
+                            <constraint firstItem="YBj-iy-zqc" firstAttribute="leading" secondItem="8J5-od-Qjt" secondAttribute="leading" id="rVo-cb-23o"/>
+                            <constraint firstItem="YBj-iy-zqc" firstAttribute="top" secondItem="8J5-od-Qjt" secondAttribute="top" constant="60" id="yGl-SG-lsG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8J5-od-Qjt"/>
                     </view>
