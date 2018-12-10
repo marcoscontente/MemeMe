@@ -14,14 +14,10 @@ class MemeTableViewCell: UITableViewCell {
     // MARK: - Outlets
     
     @IBOutlet weak var memeImageView: UIImageView!
-    @IBOutlet weak var topTextLabel: UILabel!
-    @IBOutlet weak var bottomTextLabel: UILabel!
     
     // MARK: - Data Source
     
     func fillCell(meme: Meme) {
-        topTextLabel.text = meme.topText
-        bottomTextLabel.text = meme.bottomText
         memeImageView.image = meme.memedImage
     }
 }

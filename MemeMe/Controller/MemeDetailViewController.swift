@@ -13,7 +13,11 @@ class MemeDetailViewController: UIViewController {
     
     // MARK: - Outlets
 
-    @IBOutlet weak var memedImageDetailView: UIImageView!
+    @IBOutlet weak var memedImageDetailView: UIImageView!{
+        didSet {
+            memedImageDetailView.contentMode = .scaleAspectFit
+        }
+    }
     
     // MARK: - Properties
 
