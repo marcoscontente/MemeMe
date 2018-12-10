@@ -58,7 +58,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     func setCollectionCellsLayout() {
         let space: CGFloat
         let dimension: CGFloat
-        if (UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
+        if UIDeviceOrientationIsPortrait(UIDevice.current.orientation) {
             space = 3.0
             dimension = (view.frame.size.width - (2 * space)) / 3
         } else {
@@ -66,7 +66,6 @@ class SentMemesCollectionViewController: UICollectionViewController {
             dimension = (view.frame.size.width - (1 * space)) / 5
         }
         flowLayout.minimumInteritemSpacing = space
-//        flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: dimension, height: dimension)
     }
 }
