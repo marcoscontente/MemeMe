@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemeEditorViewController: UIViewController, UITextFieldDelegate {
+class MemeEditorViewController: UIViewController {
 
     //MARK: - Outlets
     
@@ -147,17 +147,6 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
         hideTopAndBottomBars(false)
         
         return memedImage
-    }
-   
-    // MARK: - UITextField Delegate
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.text = ""
     }
 
     // MARK: - Keyboard Notifications
