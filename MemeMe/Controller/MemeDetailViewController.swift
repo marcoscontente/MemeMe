@@ -24,10 +24,6 @@ class MemeDetailViewController: UIViewController {
     var memes: Meme!
     
     // MARK: - Initialize methods
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
