@@ -23,7 +23,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setCollectionCellsLayout(withSpace: 3.0)
+        self.setCollectionCellsLayout()
     }
     
     // MARK: - CollectionViewDataSource Methods
@@ -55,15 +55,18 @@ class SentMemesCollectionViewController: UICollectionViewController {
     
     // MARK: - Layout Settings Methods
     
-    func setCollectionCellsLayout(withSpace space: CGFloat) {
-        var dimension = (view.frame.size.width - (2 * space)) / 3
+    func setCollectionCellsLayout() {
+        let space: CGFloat
+        let dimension: CGFloat
         if (UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
+            space = 3.0
             dimension = (view.frame.size.width - (2 * space)) / 3
         } else {
-            dimension = (view.frame.size.width - (2 * space)) / 5
+            space = 1.0
+            dimension = (view.frame.size.width - (1 * space)) / 5
         }
         flowLayout.minimumInteritemSpacing = space
-        flowLayout.minimumLineSpacing = space
+//        flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: dimension, height: dimension)
     }
 }
