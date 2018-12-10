@@ -97,7 +97,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Action Methods
     
     @IBAction func pickAnImage(_ sender: UIBarButtonItem) {
-        sender.title == "album" ? (pickerViewController.sourceType = .photoLibrary) : (pickerViewController.sourceType = .camera)
+        pickerViewController.sourceType = sender.title == "album" ? .photoLibrary : .camera
         present(pickerViewController, animated: true, completion: nil)
     }
     
